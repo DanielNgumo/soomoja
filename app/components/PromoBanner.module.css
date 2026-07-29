@@ -1,0 +1,188 @@
+.section {
+  padding: 48px 0;
+  background: #fff;
+}
+
+.banner {
+  background: #000;
+  border-radius: 4px;
+  padding: 56px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+}
+
+.topLabel {
+  font-size: 13px;
+  color: #00ff66;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+
+.countdown {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.timeUnit {
+  background: #fff;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeNum {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.timeLabel {
+  font-size: 9px;
+  color: #555;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.cta {
+  display: inline-block;
+  background: #00ff66;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta:hover {
+  background: #00e05a;
+  transform: translateY(-2px);
+}
+
+/* Decorative elements */
+.bannerDecor {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.circle1 {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.circle2 {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.productVisual {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headphoneArt {
+  filter: drop-shadow(0 20px 60px rgba(255,255,255,0.1));
+}
+
+@media (max-width: 1024px) {
+  .banner {
+    padding: 48px 48px;
+  }
+  .heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .bannerDecor {
+    display: none;
+  }
+  .countdown {
+    gap: 8px;
+  }
+  .timeUnit {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 32px 24px;
+  }
+  .heading {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .timeUnit {
+    width: 48px;
+    height: 48px;
+  }
+  .timeNum {
+    font-size: 14px;
+  }
+  .cta {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}

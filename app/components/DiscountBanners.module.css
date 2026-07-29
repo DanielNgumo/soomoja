@@ -1,0 +1,85 @@
+.section {
+  padding: 48px 0;
+  background: var(--bg);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3/4;
+}
+
+.textContent {
+  padding: 24px 20px;
+  flex: 1;
+}
+
+.saveText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-start;
+  color: #c98825; /* Gold/brown color from reference */
+  margin-bottom: 16px;
+}
+
+/* Specific colors based on nth-child, or just keep gold. Let's make them inherit from var or specific color. The reference shows gold for the first, dark red for second, brown for third, dark green for fourth. */
+.card:nth-child(2) .priceRow { color: #a93226; }
+.card:nth-child(3) .priceRow { color: #876543; }
+.card:nth-child(4) .priceRow { color: #1a4731; }
+
+.dollar {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.amount {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.desc {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.imageWrap {
+  position: relative;
+  height: 45%;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .card { aspect-ratio: 4/3; }
+  .imageWrap { height: 55%; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

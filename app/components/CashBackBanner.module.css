@@ -1,0 +1,269 @@
+.section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ── Left: Illustrated living room ── */
+.bgLeft {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+}
+
+/* Yellow left wall + teal right wall split */
+.wall {
+  position: absolute;
+  inset: 0;
+  background: #e8c832;
+}
+
+.wallRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  background: #4dbfb8;
+}
+
+/* Floor */
+.bgLeft::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28%;
+  background: #c8b090;
+  border-radius: 0;
+}
+
+/* Sofa group */
+.sofa {
+  position: absolute;
+  bottom: 26%;
+  left: 18%;
+  width: 52%;
+  z-index: 3;
+}
+
+.sofaBack {
+  background: #3aa09a;
+  height: 80px;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+
+.sofaSeat {
+  background: #4dbfb8;
+  height: 44px;
+  margin-top: -4px;
+  border-radius: 0 0 10px 10px;
+}
+
+.sofaLeg {
+  position: absolute;
+  bottom: -14px;
+  left: 12px;
+  width: 14px;
+  height: 14px;
+  background: #2a7a78;
+  border-radius: 3px;
+}
+
+.sofaLeg2 {
+  position: absolute;
+  bottom: -14px;
+  right: 12px;
+  width: 14px;
+  height: 14px;
+  background: #2a7a78;
+  border-radius: 3px;
+}
+
+/* Decorative cushions */
+.cushion1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 52px;
+  height: 52px;
+  background: #1a5c58;
+  border-radius: 8px;
+  transform: rotate(-5deg);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.08) 0px,
+    rgba(255,255,255,0.08) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+.cushion2 {
+  position: absolute;
+  top: 14px;
+  left: 56px;
+  width: 48px;
+  height: 42px;
+  background: #e07b30;
+  border-radius: 8px;
+  transform: rotate(3deg);
+}
+
+.cushion3 {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 50px;
+  height: 48px;
+  background: #f0a030;
+  border-radius: 8px;
+  transform: rotate(-3deg);
+}
+
+/* Plant */
+.plant {
+  position: absolute;
+  bottom: 26%;
+  left: 4%;
+  z-index: 3;
+}
+
+.plantStem {
+  width: 22px;
+  height: 90px;
+  background: #8b7355;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.plantLeaf1 {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 50px;
+  height: 70px;
+  background: #3a8a2a;
+  border-radius: 50% 10% 50% 10%;
+  transform: rotate(-20deg);
+}
+
+.plantLeaf2 {
+  position: absolute;
+  top: 10px;
+  right: -22px;
+  width: 50px;
+  height: 65px;
+  background: #4aa030;
+  border-radius: 10% 50% 10% 50%;
+  transform: rotate(20deg);
+}
+
+.plantLeaf3 {
+  position: absolute;
+  top: -30px;
+  left: -8px;
+  width: 40px;
+  height: 60px;
+  background: #38901e;
+  border-radius: 50% 10% 50% 10%;
+  transform: rotate(-5deg);
+}
+
+/* Coffee table */
+.table {
+  position: absolute;
+  bottom: 28%;
+  left: 36%;
+  width: 14%;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.tableLeg1 {
+  position: absolute;
+  bottom: 22%;
+  left: 39%;
+  width: 6px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 3px;
+  z-index: 4;
+}
+
+.tableLeg2 {
+  position: absolute;
+  bottom: 22%;
+  left: 42%;
+  width: 6px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 3px;
+  z-index: 4;
+}
+
+/* ── Right: Dark green info card ── */
+.infoBox {
+  width: 360px;
+  flex-shrink: 0;
+  background: #1a4731;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  z-index: 5;
+}
+
+.heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 13px 32px;
+  border-radius: 40px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta:hover {
+  background: #fff;
+  color: #1a4731;
+}
+
+@media (max-width: 900px) {
+  .banner { flex-direction: column; }
+  .bgLeft { min-height: 220px; }
+  .infoBox { width: 100%; padding: 32px 24px; }
+  .heading { font-size: 26px; }
+}

@@ -1,0 +1,253 @@
+.section {
+  padding: 0;
+}
+
+.banner {
+  background: #f5e6d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 80px;
+  gap: 40px;
+  min-height: 200px;
+}
+
+/* ── Left text ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 12px 28px;
+  border-radius: 40px;
+  background: #1a4731;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta:hover {
+  background: #2d6a4f;
+  transform: translateY(-2px);
+}
+
+/* ── Right: stacked cards ── */
+.right {
+  flex-shrink: 0;
+}
+
+.cardsStack {
+  position: relative;
+  width: 340px;
+  height: 220px;
+}
+
+/* Base card style */
+.card {
+  position: absolute;
+  width: 290px;
+  height: 180px;
+  border-radius: 16px;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+/* Stacking positions */
+.cardGold {
+  background: linear-gradient(135deg, #d4a200, #f5c518);
+  bottom: 0;
+  right: 0;
+  transform: rotate(6deg) translateY(10px);
+}
+
+.cardRed {
+  background: linear-gradient(135deg, #b31b2c, #d93244);
+  bottom: 20px;
+  right: 10px;
+  transform: rotate(3deg) translateY(4px);
+}
+
+.cardGreen {
+  background: linear-gradient(135deg, #1a4731, #2d6a4f);
+  bottom: 40px;
+  right: 20px;
+  transform: rotate(0deg);
+  z-index: 3;
+}
+
+.cardsStack:hover .cardGreen { transform: translateY(-6px); }
+.cardsStack:hover .cardRed { transform: rotate(3deg) translateY(8px); }
+
+/* Card internals */
+.cardTopRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardLogoIcon {
+  display: flex;
+  align-items: center;
+}
+
+.cardLogoText {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  flex: 1;
+}
+
+.contactless {
+  display: flex;
+}
+
+.cardChipRow {
+  margin: 4px 0;
+}
+
+.cardChipGold {
+  width: 36px;
+  height: 26px;
+  background: linear-gradient(135deg, #d4a200, #f5c518);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.3);
+}
+
+.cardChip {
+  width: 30px;
+  height: 22px;
+  background: linear-gradient(135deg, #d4a200, #f5c518);
+  border-radius: 4px;
+  opacity: 0.85;
+}
+
+.cardLogo {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.05em;
+}
+
+.cardNetwork {
+  width: 38px;
+  height: 22px;
+  position: relative;
+  align-self: flex-end;
+}
+
+.cardNetwork::before, .cardNetwork::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.cardNetwork::before { background: rgba(255,100,100,0.7); left: 0; }
+.cardNetwork::after { background: rgba(255,200,50,0.7); right: 0; }
+
+.cardNumber {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.1em;
+  font-family: monospace;
+}
+
+.cardExpiry {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+}
+
+.cardNumberLarge {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  font-family: monospace;
+  letter-spacing: 0.12em;
+}
+
+.cardBottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.cardLabel {
+  font-size: 8px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.cardHolder {
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.cardNetworkCircles {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.circle1, .circle2 {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+
+.circle1 {
+  background: rgba(255, 80, 80, 0.75);
+  margin-right: -10px;
+  z-index: 1;
+}
+
+.circle2 {
+  background: rgba(255, 180, 50, 0.75);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .banner {
+    flex-direction: column;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .cta { align-self: center; }
+  .cardsStack { width: 280px; height: 190px; }
+  .card { width: 250px; height: 155px; }
+  .heading { font-size: 26px; }
+}
+
+@media (max-width: 480px) {
+  .right { display: none; }
+}
